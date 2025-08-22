@@ -284,13 +284,13 @@ class LivewireDatatable extends Component
     }
 
     // save settings
-    public function rendered()
+    public function dehydrate()
     {
         if ($this->persistSearch) {
             session()->put($this->sessionStorageKey() . '_search', $this->search);
         }
 
-        return parent::rendered(); // @phpstan-ignore-line
+        return parent::dehydrate(); // @phpstan-ignore-line
     }
 
     public function columns()
